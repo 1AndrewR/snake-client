@@ -27,6 +27,15 @@ const handleUserInput = function (key) {
   if (key === "\u0003") {
     process.exit();
   };
+  if (key === "\u0020") {
+    connection.write('Say: Winning!');
+  }
+  if (key === "\u006D") {
+    connection.write('Say: Oh no!')
+  }
+  if (key === "\u0067") {
+    connection.write('Say: GG thanks!')
+  }
   console.log(key);
 };  
 module.exports = setupInput;
