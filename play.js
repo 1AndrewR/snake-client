@@ -9,6 +9,7 @@ const setupInput = function () {
   stdin.on('data', handleUserInput);
   return stdin;   // return the stdin object so we can use it elsewhere in the program
 };
+// an event listener created to exit the program with ctrl+C
 const handleUserInput = function (key) {
   if (key === "\u0003") {
     process.exit();
