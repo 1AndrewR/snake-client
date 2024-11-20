@@ -17,7 +17,19 @@ const connect = function() {
 // send initials to server
   conn.on('connect', () => {
     conn.write('Name: AR1');
-  });    
+  });
+// send move up command to server
+/*conn.on('connect', () => {
+    conn.write('Move: up');
+  });
+  conn.on('connect', () => {
+    conn.write('Move: left');
+  });
+  conn.on('connect', () => {
+    setInterval(() => {
+      conn.write('Move: down');
+    }, 1000);    
+  });*/
 // encodes messages from server to utf8
   conn.setEncoding('utf8');
   
