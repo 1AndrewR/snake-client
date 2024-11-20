@@ -6,29 +6,16 @@ const connect = function() {
     host: 'localhost',
     port: 50541
   });
-// event handler for messages from server
+  // event handler for messages from server
   conn.on('data', (data) => {
     console.log('server says :', data);
   });
-// successful connection message and send initials to server
+  // successful connection message and send initials to server
   conn.on('connect', () => {
     console.log('Successfully connected to a game server');
     conn.write('Name: AR1');
   });
 
-// send move up command to server
-/*conn.on('connect', () => {
-    conn.write('Move: up');
-  });
-  conn.on('connect', () => {
-    conn.write('Move: left');
-  });
-  conn.on('connect', () => {
-    setInterval(() => {
-      conn.write('Move: down');
-    }, 1000);    
-  });*/
-// encodes messages from server to utf8
   conn.setEncoding('utf8');
   
   return conn;

@@ -1,7 +1,7 @@
 // store connection object
 let connection;
 // setup interface to handle user input from stdin
-const setupInput = function (conn) {
+const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;  // create variable to hold the stdin object so we don't have to type process.stdin multiple times
   stdin.setRawMode(true); // Raw Mode allows us to listen for individual keypresses instead of waiting for the user to press enter
@@ -11,7 +11,7 @@ const setupInput = function (conn) {
   return stdin;   // return the stdin object so we can use it elsewhere in the program
 };
 // an event listener to handle user input
-const handleUserInput = function (key) {
+const handleUserInput = function(key) {
   if (key === "\u0077") {
     connection.write('Move: up');
   }
@@ -26,16 +26,16 @@ const handleUserInput = function (key) {
   }
   if (key === "\u0003") {
     process.exit();
-  };
+  }
   if (key === "\u0020") {
     connection.write('Say: Winning!');
   }
   if (key === "\u006D") {
-    connection.write('Say: Oh no!')
+    connection.write('Say: Oh no!');
   }
   if (key === "\u0067") {
-    connection.write('Say: GG thanks!')
+    connection.write('Say: GG thanks!');
   }
   console.log(key);
-};  
+};
 module.exports = setupInput;
